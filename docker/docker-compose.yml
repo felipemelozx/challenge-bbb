@@ -1,0 +1,25 @@
+services:
+  postgresql:
+    image:
+      postgres:lates
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    environment:
+      POSTGRES_DB: desafiobbb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+
+  rebbitmq:
+    image:
+      rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    expose:
+      - 5672
+      - 15672
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
