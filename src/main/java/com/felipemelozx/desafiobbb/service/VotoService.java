@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+import static com.felipemelozx.desafiobbb.config.RabbitConfiguration.EXCHANGE_COMPUTE_VOTE;
+import static com.felipemelozx.desafiobbb.config.RabbitConfiguration.RK_COMPUTE_VOTE;
+
 @Service
 public class VotoService {
 
@@ -21,7 +24,7 @@ public class VotoService {
   }
 
   public void processaVoto(VotoRequest request) {
-    rabbitTemplate.convertAndSend("computar-voto.ex", "", request);
+    rabbitTemplate.convertAndSend(EXCHANGE_COMPUTE_VOTE, RK_COMPUTE_VOTE, request);
   }
 
   public void saveVoto(VotoRequest votoRequest) {

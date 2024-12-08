@@ -1,5 +1,6 @@
 services:
   postgresql:
+    container_name: "postgres"
     image:
       postgres:latest
     ports:
@@ -11,7 +12,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
 
-  rebbitmq:
+  rabbitmq:
+    container_name: "rabbitmq"
     image:
       rabbitmq:3-management
     ports:
