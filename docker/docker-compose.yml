@@ -1,7 +1,7 @@
 services:
   postgresql:
     image:
-      postgres:lates
+      postgres:latest
     ports:
       - 5432:5432
     expose:
